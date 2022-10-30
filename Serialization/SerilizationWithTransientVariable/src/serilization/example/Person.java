@@ -14,7 +14,10 @@ public class Person implements Serializable {
 	
 	// transient variable with default value
 	private transient String petName = "Raj";
-
+	
+	// transient variable with default value and final
+	private final transient String height = "100";
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -46,14 +49,17 @@ public class Person implements Serializable {
 	public void setPetName(String petName) {
 		this.petName = petName;
 	}
+	
+
+	public String getHeight() {
+		return height;
+	}
 
 	@Override
 	public String toString() {
 		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", middleName=" + middleName + ", petName="
-				+ petName + "]";
+				+ petName + ", height=" + height + "]";
 	}
-	
-	
-	
+
 
 }

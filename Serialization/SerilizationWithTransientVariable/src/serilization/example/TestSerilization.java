@@ -5,6 +5,18 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * When we mark any variable as transient, then that variable is not serialized.
+ * Since transient fields aren't present in the serialized form of an object,
+ * the deserialization process would use the default values for such fields when
+ * creating an object out of the serialized form.
+ * 
+ * The final modifier makes no difference – because the field is transient, no
+ * value is saved for that field. During deserialization, the new Person object
+ * gets the default value 100 that’s defined in the Person class height field, but that value
+ * doesn’t come from the serialization data.
+ */
+
 public class TestSerilization {
 
 	private static final String LOCAL_FILE_PATH = "/home/ashif/data/";
@@ -63,7 +75,7 @@ public class TestSerilization {
 
 		try {
 			System.out.println("Reading Object Start");
-			
+
 			ObjectInputStream objectInputStream = new ObjectInputStream(
 					new FileInputStream(LOCAL_FILE_PATH + FILE_NAME));
 

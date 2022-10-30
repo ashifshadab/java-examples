@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author ashif
+ *
+ */
+module SerilizationWithStatic {
+}

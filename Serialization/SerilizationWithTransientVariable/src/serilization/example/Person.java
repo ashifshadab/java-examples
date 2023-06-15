@@ -10,6 +10,7 @@ public class Person implements Serializable {
 	
 	private String lastName;
 	
+	// transient variable
 	private transient String middleName;
 	
 	// transient variable with default value
